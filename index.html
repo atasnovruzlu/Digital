@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+
+        #hour {
+            width: 110px;
+            height: 110px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #00d2ff;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #928DAB, #00d2ff);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #928DAB, #00d2ff);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+
+        #minute {
+            width: 110px;
+            height: 110px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #00d2ff;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #928DAB, #00d2ff);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #928DAB, #00d2ff);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+
+        #second {
+            width: 110px;
+            height: 110px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #00d2ff;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #928DAB, #00d2ff);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #928DAB, #00d2ff);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+
+        div#clock {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #16BFFD;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to bottom, #CB3066, #16BFFD);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to bottom, #CB3066, #16BFFD);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+            color: white;
+            font-size: 100px;
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+</head>
+<!-- fadeInRight -->
+<body>
+    <div id="clock" class="animated lightSpeedIn">
+        <span id="hour" class="animated rotateInUpLeft"></span><span>:</span>
+        <span id="minute" class="animated shake"></span><span>:</span>
+        <span id="second" class="animated slideInDown"></span>
+
+    </div>
+
+
+
+    <script>
+        setInterval(displayClock, 500);
+
+        function displayClock() {
+            var a = new Date();
+            var b = a.getHours();
+
+            if (b > 12) {
+                b = b - 12;
+            }
+            if (b == 0) {
+                b = 12;
+            }
+            var c = a.getMinutes();
+            var d = a.getSeconds();
+
+
+            document.getElementById("hour").innerHTML = b;
+            document.getElementById("minute").innerHTML = c;
+            document.getElementById("second").innerHTML = d;
+            if (d < 10) {
+                document.getElementById("second").innerHTML = "0" + d;
+
+            }
+            if (c < 10) {
+                document.getElementById("minute").innerHTML = "0" + c;
+
+            }
+        }
+    </script>
+</body>
+
+</html>
